@@ -1,18 +1,20 @@
 spring:
   #datasource配置
   datasource:
-    url: jdbc:h2:mem:test;IFEXISTS=False;
-    username: sa
-    data-password:
-    schema: classpath:/static/db/schema.sql
-#    data: classpath:/static/db/data.sql
+    url: jdbc:mysql://localhost:3306/article_website_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+#    driver-class-name: com.mysql.jdbc.Driver
+#    schema: classpath:static/db/schema.sql
+#    data: classpath:static/db/data.sql
+#    url: jdbc:h2:mem:test;IFEXISTS=False;
+#    username: sa
+#    data-password:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       # 下面为连接池的补充设置，应用到上面所有数据源中
       # 初始化大小，最小，最大
-      url: jdbc:h2:mem:test;IFEXISTS=False;
-      username: sa
-      data-password:
+
       initial-size: 5
       min-idle: 5
       max-active: 20
@@ -34,6 +36,26 @@ spring:
       use-global-data-source-stat: true
       # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #开启StatFilter
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 1000
+        #开启Slf4jFilter
+        slf4j:
+            enabled: true
+            data-source-log-enabled: false
+            connection-log-enabled: false
+            statement-log-enabled: false
+            result-set-log-enabled: false
+          #开启WallFilter
+        wall:
+            enabled: true
+            log-violation: true
+            throw-exception: false
+            config:
+            delete-where-none-check: true
       # 配置监控服务器
       stat-view-servlet:
         enabled: true
@@ -52,15 +74,46 @@ spring:
         # 忽略过滤格式
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
 
-  # H2数据库配置
-  h2:
-  ##  charactorEncoding: utf-8
-    console:
-      enabled: true
-      path: /h2
+
+#  # H2数据库配置
+#  h2:
+#  ##  charactorEncoding: utf-8
+#    console:
+#      enabled: true
+#      path: /h2
 
   # Thymeleaf配置
   thymeleaf:
     cache: false
+    encoding: UTF-8
 
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  # dialect: ①
+  # 分页插件会自动检测当前的数据库链接，自动选择合适的分页方式（可以不设置）
+  helper-dialect: mysql
+  # 上面数据库设置后，下面的设置为true不会改变上面的结果（默认为true）
+  auto-dialect: true
+  page-size-zero: false # ②
+  reasonable: true # ③
+  # 默认值为 false，该参数对使用 RowBounds 作为分页参数时有效。（一般用不着）
+  offset-as-page-num: false
+  # 默认值为 false，RowBounds是否进行count查询（一般用不着）
+  row-bounds-with-count: false
+  #params: ④
+  #support-methods-arguments: 和params配合使用，具体可以看下面的讲解
+  # 默认值为 false。设置为 true 时，允许在运行时根据多数据源自动识别对应方言的分页
+  auto-runtime-dialect: false # ⑤
+  # 与auto-runtime-dialect配合使用
+  close-conn: true
+  # 用于控制默认不带 count 查询的方法中，是否执行 count 查询，这里设置为true后，total会为-1
+  # default-count: false
+  params: count=countSql
+  #dialect-alias: ⑥
+
+logging:
+  level.com.yzb.site: debug
 

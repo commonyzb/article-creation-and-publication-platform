@@ -9,15 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yzb</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>article-creation-and-publication-platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>article-creation-and-publication-platform</name>
+    <description>my article-creation-and-publication-platform project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <druid.version>1.1.10</druid.version>
-        <spring.version></spring.version>
     </properties>
 
     <dependencies>
@@ -30,15 +29,65 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+            <version>1.2.10</version>
+        </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+<!--        &lt;!&ndash; 验证码 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.penggle</groupId>-->
+<!--            <artifactId>kaptcha</artifactId>-->
+<!--            <version>2.3.2</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; commonmark core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.atlassian.commonmark</groupId>-->
+<!--            <artifactId>commonmark</artifactId>-->
+<!--            <version>0.8.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; commonmark table &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.atlassian.commonmark</groupId>-->
+<!--            <artifactId>commonmark-ext-gfm-tables</artifactId>-->
+<!--            <version>0.8.0</version>-->
+<!--        </dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.h2database</groupId>-->
+            <!--<artifactId>h2</artifactId>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -55,7 +104,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
         </dependency>
-
     </dependencies>
 
     <build>
