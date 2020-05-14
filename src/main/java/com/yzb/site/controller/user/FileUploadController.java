@@ -38,7 +38,7 @@ public class FileUploadController {
             resultMap.put("message", "上传失败！");
             e.printStackTrace();
         }
-        System.out.println(resultMap.get("success"));
+//        System.out.println(resultMap.get("success"));
         return resultMap;
 
     }
