@@ -15,10 +15,9 @@ public interface ArticleCategoryDao {
     String TABLE_COLUMN = "id,category_name,description,update_time";
     String ENTITY_FIELDS = "#{id},#{categoryName},#{description},#{updateTime}";
 
-    /*
+    /**
      * CRUD
      */
-
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     @Insert("INSERT INTO article_category(category_name,description,update_time) VALUES(#{categoryName},#{description},#{updateTime});")
     Integer addArticleCategory(ArticleCategory articleCategory);

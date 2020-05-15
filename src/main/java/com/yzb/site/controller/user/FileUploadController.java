@@ -18,7 +18,12 @@ public class FileUploadController {
 
     private static final String UPLOADED_FOLDER = "E:\\images\\";
 
-    //处理文件上传
+    /**处理文件上传
+     *
+     * @param file
+     * @param request
+     * @return
+     */
     @RequestMapping(value="/uploadimg")
     public @ResponseBody
     Map<String,Object> demo(@RequestParam(value = "editormd-image-file", required = false) MultipartFile file, HttpServletRequest request) {

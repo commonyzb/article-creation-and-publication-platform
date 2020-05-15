@@ -12,7 +12,7 @@ public interface AdminDao {
     String TABLE_NAME = "admin";
     String TABLE_CONLUMN = "id,admin_name,admin_password,status";
 
-    /*
+    /**
      * CRUD
      */
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
