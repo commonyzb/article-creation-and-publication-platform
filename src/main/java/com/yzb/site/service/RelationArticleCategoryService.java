@@ -8,25 +8,25 @@ public interface RelationArticleCategoryService {
     /*
      * CRUD
      */
-    Integer addRelation(RelationArticleCategory relationArticleCategory);
+    int addRelation(RelationArticleCategory relationArticleCategory);
 
-    Integer deleteRelation(RelationArticleCategory relationArticleCategory);
+    int deleteRelation(RelationArticleCategory relationArticleCategory);
 
-    Integer deleteRelationById(Integer id);
+    int deleteRelationById(int id);
 
-    Integer deleteRelationByAid(Integer aid);
+    int deleteRelationByAid(int aid);
 
-    Integer deleteRelationByCategoryId(Integer categoryId);
+    int deleteRelationByCategoryId(int categoryId);
 
-    Integer upadteRelation(RelationArticleCategory relationArticleCategory);
+    int upadteRelation(RelationArticleCategory relationArticleCategory);
 
-    Integer updateRelation(Integer categoryId);
+    int updateRelation(int categoryId);
 
-    RelationArticleCategory findById(Integer id);
+    RelationArticleCategory findById(int id);
 
-    List<RelationArticleCategory> findByAid(Integer aid);
+    List<RelationArticleCategory> findByAid(int aid);
 
-    List<RelationArticleCategory> findByCategoryId(Integer categoryId);
+    List<RelationArticleCategory> findByCategoryId(int categoryId);
 
     List<RelationArticleCategory> findAll();
 }

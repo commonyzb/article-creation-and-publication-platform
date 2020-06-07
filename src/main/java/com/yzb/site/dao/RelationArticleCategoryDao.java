@@ -19,37 +19,37 @@ public interface RelationArticleCategoryDao {
      */
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     @Insert("INSERT INTO relation_article_category(aid,category_id) VALUES(#{aid},#{categoryId}) ")
-    Integer addRealtion(RelationArticleCategory relationArticleCategory);
+    int addRealtion(RelationArticleCategory relationArticleCategory);
 
     @Delete("DELETE FROM relation_article_category WHERE id=#{id};")
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
     @Delete("DELETE FROM relation_article_category WHERE category_id=#{categroyId};")
-    Integer deleteByCategoryId(Integer categoryId);
+    int deleteByCategoryId(int categoryId);
 
     @Delete("DELETE FROM relation_article_category WHERE aid=#{aid};")
-    Integer deleteByAid(Integer aid);
+    int deleteByAid(int aid);
 
     @Delete("DELETE FROM relation_article_category WHERE aid=#{aid} AND category_id=#{categoryId};")
-    Integer deleteRealtion(RelationArticleCategory relationArticleCategory);
+    int deleteRealtion(RelationArticleCategory relationArticleCategory);
 
     @Update("UPDATE relation_article_category SET aid=#{aid},category_id=#{categoryId} WHERE id=#{id};")
-    Integer updateRealtion(RelationArticleCategory relationArticleCategory);
+    int updateRealtion(RelationArticleCategory relationArticleCategory);
 
     @Update("UPDATE relation_article_category set category_id=3 WHERE category_id=#{categoryId};")
-    Integer updateRelation(Integer categoryId);
+    int updateRelation(int categoryId);
 
     @Select("SELECT * FROM relation_article_category WHERE aid=#{aid} AND category_id=#{categoryId};")
     RelationArticleCategory findByRelationArticleCategory(RelationArticleCategory relationArticleCategory);
 
     @Select("SELECT * FROM relation_article_category WHERE category_id=#{categoryId};")
-    List<RelationArticleCategory> findByCategoryId(Integer categoryId);
+    List<RelationArticleCategory> findByCategoryId(int categoryId);
 
     @Select("SELECT * FROM relation_article_category WHERE aid=#{aid};")
-    List<RelationArticleCategory> findByAid(Integer aid);
+    List<RelationArticleCategory> findByAid(int aid);
 
     @Select("SELECT * FROM relation_article_category WHERE id=#{id};")
-    RelationArticleCategory findById(Integer id);
+    RelationArticleCategory findById(int id);
 
     @Select("SELECT * FROM relation_article_category ")
     List<RelationArticleCategory> findAll();

@@ -7,23 +7,23 @@ import java.util.List;
 
 public interface ArticleCategoryService {
 
-    Integer addArticleCategory(ArticleCategory articleCategory);
+    int addArticleCategory(ArticleCategory articleCategory);
 
-    Integer deleteArticleCategory(ArticleCategory articleCategory);
+    int deleteArticleCategory(ArticleCategory articleCategory);
 
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
-    Integer updateArticleCategory(ArticleCategory articleCategory);
+    int updateArticleCategory(ArticleCategory articleCategory);
 
-    Integer countArticleCategory();
+    int countArticleCategory();
 
-    ArticleCategory findById(Integer id);
+    ArticleCategory findById(int id);
 
     List<ArticleCategory> findByName(String name);
 
-    List<ArticleCategory> findByAid(Integer aid);
+    List<ArticleCategory> findByAid(int aid);
 
-    List<CategoryVO> categoryVOSFindByAid(Integer aid);
+    List<CategoryVO> categoryVOSFindByAid(int aid);
 
     List<ArticleCategory> findAll();
 }

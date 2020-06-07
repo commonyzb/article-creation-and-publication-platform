@@ -15,57 +15,57 @@ public class ArticleServiceImpl implements ArticleService {
     ArticleDao articleDao;
 
     @Override
-    public Integer addArticle(Article article) {
+    public int addArticle(Article article) {
         return articleDao.addArticle(article);
     }
 
     @Override
-    public Integer deleteArticle(Article article) {
+    public int deleteArticle(Article article) {
         return articleDao.deleteArticle(article);
     }
 
     @Override
-    public Integer deleteArticle(Integer id) {
+    public int deleteArticle(int id) {
         return articleDao.deleteById(id);
     }
 
     @Override
-    public Integer updateArticle(Article article) {
+    public int updateArticle(Article article) {
         return articleDao.updateArticle(article);
     }
 
     @Override
-    public Integer updateArticleStatus(Integer aid, Integer status) {
+    public int updateArticleStatus(int aid, int status) {
         return articleDao.updateArticleStatus(aid,status);
     }
 
     @Override
-    public Integer updateEnableCommentStatus(Integer aid, Integer enableComment) {
+    public int updateEnableCommentStatus(int aid, int enableComment) {
         return articleDao.updateEnableComment(aid,enableComment);
     }
 
     @Override
-    public Integer updateAuditStatus(Integer aid, Integer auditStatus) {
+    public int updateAuditStatus(int aid, int auditStatus) {
         return articleDao.updateAuditStatus(aid,auditStatus);
     }
 
     @Override
-    public Integer countArticle() {
+    public int countArticle() {
         return articleDao.countArticle();
     }
 
     @Override
-    public Integer countArticleByUid(Integer uid) {
+    public int countArticleByUid(int uid) {
         return articleDao.countArticleByUid(uid);
     }
 
     @Override
-    public Article findById(Integer id) {
+    public Article findById(int id) {
         return articleDao.findById(id);
     }
 
     @Override
-    public List<Article> findByUid(Integer uid) {
+    public List<Article> findByUid(int uid) {
         return articleDao.findByUid(uid);
     }
 
@@ -80,12 +80,12 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> findByCategoryId(Integer id) {
+    public List<Article> findByCategoryId(int id) {
         return articleDao.findByCategory(id);
     }
 
     @Override
-    public List<Article> findByStatus(Integer status) {
+    public List<Article> findByStatus(int status) {
         return articleDao.findByStatus(status);
     }
 

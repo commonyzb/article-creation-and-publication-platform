@@ -17,22 +17,22 @@ public interface AdminDao {
      */
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     @Insert("INSERT INTO admin(admin_name,admin_password,status) VALUES(#{adminName},#{adminPassword},#{status});")
-    Integer addAdmin(Admin admin);
+    int addAdmin(Admin admin);
 
     @Delete("DELETE FROM admin WHERE id=#{id};")
-    Integer deleteAdmin(Admin admin);
+    int deleteAdmin(Admin admin);
 
     @Delete("DELETE FROM admin WHERE id=#{id};")
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
     @Update("UPDATE admin SET admin_name=#{adminName},admin_password=#{adminPassword},status=#{status} WHERE id=#{id};")
-    Integer updateAdmin(Admin admin);
+    int updateAdmin(Admin admin);
 
     @Select("SELECT COUNT(*) FROM admin;")
-    Integer countAdmin();
+    int countAdmin();
 
     @Select("SELECT * FROM admin WHERE id=#{id};")
-    Admin findById(Integer id);
+    Admin findById(int id);
 
     @Select("SELECT * FROM admin WHERE admin_name=#{adminName} AND admin_password=#{adminPassword};")
     Admin validAdmin(Admin admin);

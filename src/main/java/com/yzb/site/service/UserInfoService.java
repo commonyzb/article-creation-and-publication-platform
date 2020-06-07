@@ -6,21 +6,21 @@ import java.util.List;
 
 public interface UserInfoService {
 
-    Integer addUserInfo(UserInfo userInfo);
+    int addUserInfo(UserInfo userInfo);
 
-    Integer deleteUserInfo(UserInfo userInfo);
+    int deleteUserInfo(UserInfo userInfo);
 
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
-    Integer deleteByUid(Integer uid);
+    int deleteByUid(int uid);
 
-    Integer updateUserInfo(UserInfo userInfo);
+    int updateUserInfo(UserInfo userInfo);
 
-    Integer countUserInfo();
+    int countUserInfo();
 
-    UserInfo findById(Integer id);
+    UserInfo findById(int id);
 
-    UserInfo findByUid(Integer uid);
+    UserInfo findByUid(int uid);
 
     List<UserInfo> findAll();
 }

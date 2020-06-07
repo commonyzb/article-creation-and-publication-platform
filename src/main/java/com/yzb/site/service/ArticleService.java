@@ -9,35 +9,35 @@ public interface ArticleService {
     /*
      * CRUD
      */
-    Integer addArticle(Article article);
+    int addArticle(Article article);
 
-    Integer deleteArticle(Article article);
+    int deleteArticle(Article article);
 
-    Integer deleteArticle(Integer id);
+    int deleteArticle(int id);
 
-    Integer updateArticle(Article article);
+    int updateArticle(Article article);
 
-    Integer updateArticleStatus(Integer aid,Integer status);
+    int updateArticleStatus(int aid,int status);
 
-    Integer updateEnableCommentStatus(Integer aid,Integer enableComment);
+    int updateEnableCommentStatus(int aid,int enableComment);
 
-    Integer updateAuditStatus(Integer aid,Integer auditStatus);
+    int updateAuditStatus(int aid,int auditStatus);
 
-    Integer countArticle();
+    int countArticle();
 
-    Integer countArticleByUid(Integer uid);
+    int countArticleByUid(int uid);
 
-    Article findById(Integer id);
+    Article findById(int id);
 
-    List<Article> findByUid(Integer uid);
+    List<Article> findByUid(int uid);
 
     List<Article> findByTitle(String title);
 
     List<Article> findByCategoryName(String categoryName);
 
-    List<Article> findByCategoryId(Integer id);
+    List<Article> findByCategoryId(int id);
 
-    List<Article> findByStatus(Integer status);
+    List<Article> findByStatus(int status);
 
     List<Article> userFindByCategoryName(String categoryName);
 

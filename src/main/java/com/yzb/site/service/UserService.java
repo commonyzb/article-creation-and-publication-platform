@@ -6,25 +6,25 @@ import java.util.List;
 
 public interface UserService {
 
-    Integer addUser(User user);
+    int addUser(User user);
 
-    Integer deleteUser(User user);
+    int deleteUser(User user);
 
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
-    Integer updateUser(User user);
+    int updateUser(User user);
 
-    Integer updateUserStatus(User user);
+    int updateUserStatus(User user);
 
-    Integer validUserName(String userName);
+    int validUserName(String userName);
 
 //    User validUser(String userName, String userPassword);
 
-    Integer countUser();
+    int countUser();
 
     User validUser(User user);
 
-    User findById(Integer id);
+    User findById(int id);
 
     User findByName(String userName);
 

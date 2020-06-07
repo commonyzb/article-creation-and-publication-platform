@@ -20,33 +20,33 @@ public interface ArticleCategoryDao {
      */
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     @Insert("INSERT INTO article_category(category_name,description,update_time) VALUES(#{categoryName},#{description},#{updateTime});")
-    Integer addArticleCategory(ArticleCategory articleCategory);
+    int addArticleCategory(ArticleCategory articleCategory);
 
     @Delete("DELETE FROM article_category WHERE id=#{id};")
-    Integer deleteArticleCategory(ArticleCategory articleCategory);
+    int deleteArticleCategory(ArticleCategory articleCategory);
 
     @Delete("DELETE FROM article_category WHERE id=#{id};")
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
     @Delete("DELETE FROM article_category WHERE category_name=#{categoryName};")
-    Integer deleteByName(String categoryName);
+    int deleteByName(String categoryName);
 
     @Update("UPDATE article_category SET category_name=#{categoryName},description=#{description},update_time=#{updateTime} WHERE id=#{id};")
-    Integer updateArticleCategory(ArticleCategory articleCategory);
+    int updateArticleCategory(ArticleCategory articleCategory);
 
-    Integer countCategoryByUid();
+    int countCategoryByUid();
 
     @Select("SELECT COUNT(*) FROM article_category;")
-    Integer countCategory();
+    int countCategory();
 
     @Select("SELECT DISTINCT c.* from article as a,article_category as c,relation_article_category as r WHERE #{aid}=r.aid AND c.id=r.category_id; ")
-    List<ArticleCategory> findByAid(Integer aid);
+    List<ArticleCategory> findByAid(int aid);
 
     @Select("SELECT DISTINCT c.id,c.category_name from article as a,article_category as c,relation_article_category as r WHERE #{aid}=r.aid AND c.id=r.category_id;")
-    List<CategoryVO> categoryVOSFindByAid(Integer aid);
+    List<CategoryVO> categoryVOSFindByAid(int aid);
 
     @Select("SELECT id,category_name,description,update_time FROM article_category WHERE id=#{id};")
-    ArticleCategory findById(Integer id);
+    ArticleCategory findById(int id);
 
     @Select("SELECT id,category_name,description,update_time FROM article_category WHERE category_name LIKE CONCAT('%',#{categoryName},'%') ")
     List<ArticleCategory> findByName(String categoryName);

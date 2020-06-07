@@ -6,23 +6,21 @@ import java.util.List;
 
 public interface AdminService {
 
-    Integer addAdmin(Admin admin);
+    int addAdmin(Admin admin);
 
-    Integer deleteAdmin(Admin admin);
+    int deleteAdmin(Admin admin);
 
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
-    Integer updateAdmin(Admin admin);
+    int updateAdmin(Admin admin);
 
-    Integer countAdmin();
+    int countAdmin();
 
     boolean valildName(String adminName);
 
     Admin validAdmin(Admin admin);
 
-    Admin findById(Integer id);
-
-
+    Admin findById(int id);
 
     List<Admin> findAll();
 }

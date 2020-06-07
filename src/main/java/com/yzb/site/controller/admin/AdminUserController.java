@@ -41,23 +41,21 @@ public class AdminUserController {
         else {
             userList = new ArrayList<>(1);
             User user = userService.findByName(userName);
-            if(user != null)
-            userList.add(userService.findByName(userName));
+            if(user != null){
+                userList.add(userService.findByName(userName));
+            }
         }
         if(userList.isEmpty() == false){
             userPageInfo = new PageInfo<>(userList);
             resultResponse = new ResultResponse(0,"查询成功！");
-            resultResponse.setData(userPageInfo);
-            return resultResponse;
         }
         else {
             userPageInfo = new PageInfo<>();
             resultResponse = new ResultResponse<>(1,"用户"+userName+"不存在！！！");
-            resultResponse.setData(userPageInfo);
-            return resultResponse;
         }
+        resultResponse.setData(userPageInfo);
+        return resultResponse;
     }
-
 
     @PostMapping("/user/updateUserStatus")
     public ResultResponse updateUserStatus(User user){

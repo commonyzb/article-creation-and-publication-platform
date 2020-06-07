@@ -16,32 +16,32 @@ public class ArticleCategoryServiceImpl implements ArticleCategoryService {
     private ArticleCategoryDao articleCategoryDao;
 
     @Override
-    public Integer addArticleCategory(ArticleCategory articleCategory) {
+    public int addArticleCategory(ArticleCategory articleCategory) {
         return articleCategoryDao.addArticleCategory(articleCategory);
     }
 
     @Override
-    public Integer deleteArticleCategory(ArticleCategory articleCategory) {
+    public int deleteArticleCategory(ArticleCategory articleCategory) {
         return articleCategoryDao.deleteArticleCategory(articleCategory);
     }
 
     @Override
-    public Integer deleteById(Integer id) {
+    public int deleteById(int id) {
         return articleCategoryDao.deleteById(id);
     }
 
     @Override
-    public Integer updateArticleCategory(ArticleCategory articleCategory) {
+    public int updateArticleCategory(ArticleCategory articleCategory) {
         return articleCategoryDao.updateArticleCategory(articleCategory);
     }
 
     @Override
-    public Integer countArticleCategory() {
+    public int countArticleCategory() {
         return articleCategoryDao.countCategory();
     }
 
     @Override
-    public ArticleCategory findById(Integer id) {
+    public ArticleCategory findById(int id) {
         return articleCategoryDao.findById(id);
     }
 
@@ -51,12 +51,12 @@ public class ArticleCategoryServiceImpl implements ArticleCategoryService {
     }
 
     @Override
-    public List<ArticleCategory> findByAid(Integer aid) {
+    public List<ArticleCategory> findByAid(int aid) {
         return articleCategoryDao.findByAid(aid);
     }
 
     @Override
-    public List<CategoryVO> categoryVOSFindByAid(Integer aid) {
+    public List<CategoryVO> categoryVOSFindByAid(int aid) {
         return articleCategoryDao.categoryVOSFindByAid(aid);
     }
 

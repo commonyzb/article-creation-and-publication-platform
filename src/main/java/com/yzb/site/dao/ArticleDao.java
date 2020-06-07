@@ -20,37 +20,37 @@ public interface ArticleDao {
 
     @Options(useGeneratedKeys = true,keyProperty = "aid",keyColumn = "aid")
     @Insert("INSERT INTO article(author,title,content,summary,create_time,likes,views,uid,status,enable_comment,audit_status) VALUES(#{author},#{title},#{content},#{summary},#{createTime},#{likes},#{views},#{uid},#{status},#{enableComment},#{auditStatus}) " )
-    Integer addArticle(Article article);
+    int addArticle(Article article);
 
     @Delete("DELETE FROM article WHERE aid=#{aid}")
-    Integer deleteArticle(Article article);
+    int deleteArticle(Article article);
 
     @Delete("DELETE FROM article WHERE aid=#{aid}")
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
     @Update("UPDATE article SET author=#{author},title=#{title},content=#{content},summary=#{summary},create_time=#{createTime},likes=#{likes},views=#{views},uid=#{uid},status=#{status},enable_comment=#{enableComment},audit_status=#{auditStatus} WHERE aid=#{aid};")
-    Integer updateArticle(Article article);
+    int updateArticle(Article article);
 
     @Update("UPDATE article SET enable_comment=#{enableComment} WHERE aid=#{aid} ")
-    Integer updateEnableComment(Integer aid,Integer enableComment);
+    int updateEnableComment(int aid,int enableComment);
 
     @Update("UPDATE article SET status=#{status} WHERE aid=#{aid} ")
-    Integer updateArticleStatus(Integer aid,Integer status);
+    int updateArticleStatus(int aid,int status);
 
     @Update("UPDATE article SET audit_status=#{auditStatus} WHERE aid=#{aid} ")
-    Integer updateAuditStatus(Integer aid,Integer auditStatus);
+    int updateAuditStatus(int aid,int auditStatus);
 
     @Select("SELECT COUNT(*) FROM article;")
-    Integer countArticle();
+    int countArticle();
 
     @Select("SELECT COUNT(*) FROM article WHERE article.uid=#{uid};")
-    Integer countArticleByUid(Integer uid);
+    int countArticleByUid(int uid);
 
     @Select("SELECT * FROM article WHERE aid=#{id} ")
-    Article findById(Integer id);
+    Article findById(int id);
 
     @Select("SELECT * FROM article WHERE uid=#{uid} ")
-    List<Article> findByUid(Integer uid);
+    List<Article> findByUid(int uid);
 
     @Select("SELECT * FROM article WHERE uid=#{uid} ")
     List<Article> findByUser(User user);
@@ -60,7 +60,7 @@ public interface ArticleDao {
 
 //    @Select("SELECT DISTINCT a.* FROM article as a,article_category as c,relation_article_category as r WHERE a.aid=r.aid AND r.category_id=#{categoryId} ;")
     @Select("SELECT DISTINCT a.* FROM relation_article_category as r INNER JOIN article_category as c ON #{categoryId}=c.id LEFT JOIN article as a ON a.aid=r.aid ")
-    List<Article> findByCategory(Integer categoryId);
+    List<Article> findByCategory(int categoryId);
 
     @Select("SELECT a.* FROM article as a,article_category as c,relation_article_category as r WHERE a.aid=r.aid AND r.category_id=c.id AND category_name=#{categoryName} ")
     List<Article> findByCategoryName(String categoryName);
@@ -72,7 +72,7 @@ public interface ArticleDao {
     List<Article> findBysummary(String summary);
 
     @Select("SELECT * FROM article WHERE status=#{status} ")
-    List<Article> findByStatus(Integer status);
+    List<Article> findByStatus(int status);
 
     @Select("select a.* from article as a inner join relation_article_category as r on a.aid=r.aid and a.status=1 and a.audit_status=1 inner join article_category as c on r.category_id=c.id where c.category_name=#{categoryName}; ")
     List<Article> userFindByCategoryName(String categoryName);

@@ -19,34 +19,33 @@ public interface UserInfoDao {
 
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     @Insert("INSERT INTO user_info(user_name,sex,age,email,uid) VALUES(#{userName},#{sex},#{age},#{email},#{uid});")
-    Integer addUserInfo(UserInfo userInfo);
+    int addUserInfo(UserInfo userInfo);
 
     @Delete("DELETE FROM user_info WHERE id=#{id};")
-    Integer deleteUserInfo(UserInfo userInfo);
+    int deleteUserInfo(UserInfo userInfo);
 
     @Delete("DELETE FROM user_info WHERE id=#{id};")
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
     @Delete("DELETE FROM user_info WHERE uid=#{uid};")
-    Integer deleteByUid(Integer uid);
+    int deleteByUid(int uid);
 
     @Update("UPDATE user_info SET user_name=#{userName},sex=#{sex},age=#{age},email=#{email},uid=#{uid} WHERE id=#{id};")
-    Integer updateUserInfo(UserInfo userInfo);
+    int updateUserInfo(UserInfo userInfo);
 
     @Select("SELECT COUNT(*) FROM user_info;")
-    Integer countUserInfo();
+    int countUserInfo();
 
     @Select("SELECT * FROM user_info WHERE id=#{id};")
-    UserInfo findById(Integer id);
+    UserInfo findById(int id);
 
     @Select("SELECT * FROM user_info WHERE uid=#{uid};")
-    UserInfo findByUid(Integer uid);
+    UserInfo findByUid(int uid);
 
     @Select("SELECT * FROM user_info WHERE id=#{id};")
     UserInfo findUserInfo(UserInfo userInfo);
 
     @Select("SELECT * FROM user_info;")
     List<UserInfo> findAll();
-
 
 }

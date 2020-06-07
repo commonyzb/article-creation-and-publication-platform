@@ -16,37 +16,37 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public Integer addUser(User user) {
+    public int addUser(User user) {
         return userDao.addUser(user);
     }
 
     @Override
-    public Integer deleteUser(User user) {
+    public int deleteUser(User user) {
         return userDao.deleteUser(user);
     }
 
     @Override
-    public Integer deleteById(Integer id) {
+    public int deleteById(int id) {
         return userDao.deleteById(id);
     }
 
     @Override
-    public Integer updateUser(User user) {
+    public int updateUser(User user) {
         return userDao.updateUser(user);
     }
 
     @Override
-    public Integer updateUserStatus(User user) {
+    public int updateUserStatus(User user) {
         return userDao.updateUserStatus(user);
     }
 
     @Override
-    public Integer validUserName(String userName) {
+    public int validUserName(String userName) {
         return userDao.validUserName(userName);
     }
 
     @Override
-    public Integer countUser() {
+    public int countUser() {
         return userDao.countUser();
     }
 
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(Integer id) {
+    public User findById(int id) {
         return userDao.findUserById(id);
     }
 

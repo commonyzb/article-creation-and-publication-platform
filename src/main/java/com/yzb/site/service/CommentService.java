@@ -6,33 +6,33 @@ import java.util.List;
 
 public interface CommentService {
 
-    Integer addComment(Comment comment);
+    int addComment(Comment comment);
 
-    Integer deleteComment(Comment comment);
+    int deleteComment(Comment comment);
 
-    Integer deleteById(Integer id);
+    int deleteById(int id);
 
-    Integer updateComment(Comment comment);
+    int updateComment(Comment comment);
 
-    Integer updateCommentStatus(Integer id,Integer status);
+    int updateCommentStatus(int id,int status);
 
-    Integer countComment();
+    int countComment();
 
-    Integer countCommentByUid(Integer uid);
+    int countCommentByUid(int uid);
 
-    Comment findById(Integer id);
+    Comment findById(int id);
 
-    List<Comment> findByFirstFloor(Integer aid);
+    List<Comment> findByFirstFloor(int aid);
 
-    List<Comment> findByParentId(Integer parentId);
+    List<Comment> findByParentId(int parentId);
 
-    List<Comment> findByAid(Integer aid);
+    List<Comment> findByAid(int aid);
 
-    List<Comment> findByFromUid(Integer uid);
+    List<Comment> findByFromUid(int uid);
 
-    List<Comment> findByToUid(Integer uid);
+    List<Comment> findByToUid(int uid);
 
-    List<Comment> findByStatus(Integer status);
+    List<Comment> findByStatus(int status);
 
     List<Comment> findAll();
 

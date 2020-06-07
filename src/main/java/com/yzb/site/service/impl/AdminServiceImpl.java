@@ -15,27 +15,27 @@ public class AdminServiceImpl implements AdminService {
     private AdminDao adminDao;
 
     @Override
-    public Integer addAdmin(Admin admin) {
+    public int addAdmin(Admin admin) {
         return adminDao.addAdmin(admin);
     }
 
     @Override
-    public Integer deleteAdmin(Admin admin) {
+    public int deleteAdmin(Admin admin) {
         return adminDao.deleteAdmin(admin);
     }
 
     @Override
-    public Integer deleteById(Integer id) {
+    public int deleteById(int id) {
         return adminDao.deleteById(id);
     }
 
     @Override
-    public Integer updateAdmin(Admin admin) {
+    public int updateAdmin(Admin admin) {
         return adminDao.updateAdmin(admin);
     }
 
     @Override
-    public Integer countAdmin() {
+    public int countAdmin() {
         return adminDao.countAdmin();
     }
 
@@ -50,7 +50,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin findById(Integer id) {
+    public Admin findById(int id) {
         return adminDao.findById(id);
     }
 

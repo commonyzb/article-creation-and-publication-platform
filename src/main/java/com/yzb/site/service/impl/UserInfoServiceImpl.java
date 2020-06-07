@@ -15,42 +15,42 @@ public class UserInfoServiceImpl implements UserInfoService {
     private UserInfoDao userInfoDao;
 
     @Override
-    public Integer addUserInfo(UserInfo userInfo) {
+    public int addUserInfo(UserInfo userInfo) {
         return userInfoDao.addUserInfo(userInfo);
     }
 
     @Override
-    public Integer deleteUserInfo(UserInfo userInfo) {
+    public int deleteUserInfo(UserInfo userInfo) {
         return userInfoDao.deleteUserInfo(userInfo);
     }
 
     @Override
-    public Integer deleteById(Integer id) {
+    public int deleteById(int id) {
         return userInfoDao.deleteById(id);
     }
 
     @Override
-    public Integer deleteByUid(Integer uid) {
+    public int deleteByUid(int uid) {
         return userInfoDao.deleteByUid(uid);
     }
 
     @Override
-    public Integer updateUserInfo(UserInfo userInfo) {
+    public int updateUserInfo(UserInfo userInfo) {
         return userInfoDao.updateUserInfo(userInfo);
     }
 
     @Override
-    public Integer countUserInfo() {
+    public int countUserInfo() {
         return userInfoDao.countUserInfo();
     }
 
     @Override
-    public UserInfo findById(Integer id) {
+    public UserInfo findById(int id) {
         return userInfoDao.findById(id);
     }
 
     @Override
-    public UserInfo findByUid(Integer uid) {
+    public UserInfo findByUid(int uid) {
         return userInfoDao.findByUid(uid);
     }
 

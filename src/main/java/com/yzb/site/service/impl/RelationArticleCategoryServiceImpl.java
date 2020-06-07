@@ -15,52 +15,52 @@ public class RelationArticleCategoryServiceImpl implements RelationArticleCatego
     private RelationArticleCategoryDao relationArticleCategoryDao;
 
     @Override
-    public Integer addRelation(RelationArticleCategory relationArticleCategory) {
+    public int addRelation(RelationArticleCategory relationArticleCategory) {
         return relationArticleCategoryDao.addRealtion(relationArticleCategory);
     }
 
     @Override
-    public Integer deleteRelation(RelationArticleCategory relationArticleCategory) {
+    public int deleteRelation(RelationArticleCategory relationArticleCategory) {
         return relationArticleCategoryDao.deleteRealtion(relationArticleCategory);
     }
 
     @Override
-    public Integer deleteRelationById(Integer id) {
+    public int deleteRelationById(int id) {
         return relationArticleCategoryDao.deleteById(id);
     }
 
     @Override
-    public Integer deleteRelationByAid(Integer aid) {
+    public int deleteRelationByAid(int aid) {
         return relationArticleCategoryDao.deleteByAid(aid);
     }
 
     @Override
-    public Integer deleteRelationByCategoryId(Integer categoryId) {
+    public int deleteRelationByCategoryId(int categoryId) {
         return relationArticleCategoryDao.deleteByCategoryId(categoryId);
     }
 
     @Override
-    public Integer upadteRelation(RelationArticleCategory relationArticleCategory) {
+    public int upadteRelation(RelationArticleCategory relationArticleCategory) {
         return relationArticleCategoryDao.updateRealtion(relationArticleCategory);
     }
 
     @Override
-    public Integer updateRelation(Integer categoryId) {
+    public int updateRelation(int categoryId) {
         return relationArticleCategoryDao.updateRelation(categoryId);
     }
 
     @Override
-    public RelationArticleCategory findById(Integer id) {
+    public RelationArticleCategory findById(int id) {
         return relationArticleCategoryDao.findById(id);
     }
 
     @Override
-    public List<RelationArticleCategory> findByAid(Integer aid) {
+    public List<RelationArticleCategory> findByAid(int aid) {
         return relationArticleCategoryDao.findByAid(aid);
     }
 
     @Override
-    public List<RelationArticleCategory> findByCategoryId(Integer categoryId) {
+    public List<RelationArticleCategory> findByCategoryId(int categoryId) {
         return relationArticleCategoryDao.findByCategoryId(categoryId);
     }
 

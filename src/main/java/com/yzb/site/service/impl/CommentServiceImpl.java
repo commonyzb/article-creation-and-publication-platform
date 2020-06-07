@@ -15,73 +15,73 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
 
     @Override
-    public Integer addComment(Comment comment) {
+    public int addComment(Comment comment) {
         return commentDao.addComment(comment);
     }
 
     @Override
-    public Integer deleteComment(Comment comment) {
+    public int deleteComment(Comment comment) {
         return commentDao.deleteComment(comment);
     }
 
     @Override
-    public Integer deleteById(Integer id) {
+    public int deleteById(int id) {
         return commentDao.deleteById(id);
     }
 
     @Override
-    public Integer updateComment(Comment comment) {
+    public int updateComment(Comment comment) {
         return commentDao.updateComment(comment);
     }
 
     @Override
-    public Integer updateCommentStatus(Integer id, Integer status) {
+    public int updateCommentStatus(int id, int status) {
         return commentDao.updateCommentStatus(id,status);
     }
 
     @Override
-    public Integer countComment() {
+    public int countComment() {
         return commentDao.countComment();
     }
 
     @Override
-    public Integer countCommentByUid(Integer uid) {
+    public int countCommentByUid(int uid) {
         return commentDao.countCommentByUid(uid);
     }
 
     @Override
-    public Comment findById(Integer id) {
+    public Comment findById(int id) {
         return commentDao.findById(id);
     }
 
     @Override
-    public List<Comment> findByFirstFloor(Integer aid) {
+    public List<Comment> findByFirstFloor(int aid) {
         return commentDao.findByFirstFloor(aid);
     }
 
     @Override
-    public List<Comment> findByParentId(Integer parentId) {
+    public List<Comment> findByParentId(int parentId) {
         return commentDao.findByParentId(parentId);
     }
 
     @Override
-    public List<Comment> findByAid(Integer aid) {
+    public List<Comment> findByAid(int aid) {
         return commentDao.findByAid(aid);
     }
 
     @Override
-    public List<Comment> findByFromUid(Integer uid) {
+    public List<Comment> findByFromUid(int uid) {
         return commentDao.findByFromUid(uid);
     }
 
     @Override
-    public List<Comment> findByToUid(Integer uid) {
+    public List<Comment> findByToUid(int uid) {
         return commentDao.findByToUid(uid);
     }
 
 
     @Override
-    public List<Comment> findByStatus(Integer status) {
+    public List<Comment> findByStatus(int status) {
         return commentDao.findByStatus(status);
     }
 

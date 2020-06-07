@@ -44,7 +44,7 @@ public class UserController {
             resultResponse=new ResultResponse(407,"用户名或密码不能为空！");
             return resultResponse;
         }
-        if(userService.validUserName(userName)!=null){
+        if(userService.validUserName(userName) == 0){
             resultResponse=new ResultResponse(407,"用户名已存在！");
             return resultResponse;
         }
